@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block section %}
+    <a href="{% url "template-update" object.id %}">Editar</a>
+    <a href="{% url "template-delete" object.id %}">Eliminar</a>
+    <hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div>
+    <div>
+        <img src="{% static object.template.url %}" style="width:550px;height:420px"/>
+    </div>
+</div>
+{% endblock maincontent %}
