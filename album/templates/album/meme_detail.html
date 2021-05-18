@@ -9,8 +9,7 @@
             <a href="{% url "template-detail" object.template_id %}">{{ object.template.name }}</a>
         {% endif %}
     </h2>
-    <a href="{% url "meme-update" object.id %}">Editar</a>
-    <a href="{% url "meme-delete" object.id %}">Eliminar</a>
+    <a href="{% url "meme-delete" object.id %}" class="btn btn-danger">Eliminar</a>
     <hr>
 {% endblock section %}
 

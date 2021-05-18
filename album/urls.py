@@ -3,16 +3,15 @@ from album import views
 
 
 urlpatterns = [ 
-                       url(r'^$', views.base, name='base'),
-                       url(r'^template/$', views.TemplateListView.as_view(), name='template-list'),
-                       url(r'^template/(?P<pk>\d+)/detail/$', views.TemplateDetailView.as_view(),
+                       url(r'^$', views.TemplateListView.as_view(), name='template-list'),
+                       url(r'^(?P<pk>\d+)/detail/$', views.TemplateDetailView.as_view(),
                            name='template-detail'),
                        # Update
-                       url(r'^template/(?P<pk>\d+)/update/$', views.TemplateUpdate.as_view(), name='template-update'),
+                       url(r'^(?P<pk>\d+)/update/$', views.TemplateUpdate.as_view(), name='template-update'),
                        #Create
-                       url(r'^template/create/$', views.TemplateCreate.as_view(), name='template-create'),
+                       url(r'^create/$', views.TemplateCreate.as_view(), name='template-create'),
                        #Delete
-                       url(r'^template/(?P<pk>\d+)/delete/$', views.TemplateDelete.as_view(), name='template-delete'),
+                       url(r'^(?P<pk>\d+)/delete/$', views.TemplateDelete.as_view(), name='template-delete'),
                        url(r'^meme/$', views.MemeListView.as_view(), name='meme-list'),
                        url(r'^meme/(?P<pk>\d+)/detail/$', views.MemeDetailView.as_view(),
                            name='meme-detail'),

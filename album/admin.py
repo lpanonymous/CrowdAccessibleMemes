@@ -14,6 +14,16 @@ class TemplateAdmin(admin.ModelAdmin):
     template_preview.short_description = 'Template Preview'
     template_preview.allow_tags = True
 
+class MemeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'template', 'meme')
+    readonly_fields = ('meme_preview',)
+
+    def meme_preview(self, obj):
+        return obj.meme_preview
+
+    meme_preview.short_description = 'Template Preview'
+    meme_preview.allow_tags = True
+
 admin.site.register(Template, TemplateAdmin)
-admin.site.register(Meme)
+admin.site.register(Meme, MemeAdmin)
 

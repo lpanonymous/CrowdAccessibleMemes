@@ -50,3 +50,9 @@ class Meme(models.Model):
 
     def get_absolute_url(self):
         return reverse('meme-list')
+
+    @property
+    def meme_preview(self):
+        if self.meme:
+            return mark_safe('<img src="/static{}" width="300" height="300" />'.format(self.meme.url))
+        return ""
