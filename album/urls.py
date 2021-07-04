@@ -1,6 +1,6 @@
 from django.conf.urls import url 
 from album import views
-
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [ 
                        url(r'^$', views.TemplateListView.as_view(), name='template-list'),
@@ -21,4 +21,6 @@ urlpatterns = [
                        url(r'^meme/create/$', views.MemeCreate.as_view(), name='meme-create'),
                        #Delete
                        url(r'^meme/(?P<pk>\d+)/delete/$', views.MemeDelete.as_view(), name='meme-delete'),
+                       
+                       url(r'^login/$', auth_views.LoginView.as_view(template_name="auth/login.html", redirect_authenticated_user=True), name='auth_login'),
 ]

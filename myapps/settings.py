@@ -22,7 +22,7 @@ SECRET_KEY = '9pgbk9j2%0e58g(82nzc=(bi_2r-_k6uv1x5=qcpkcn2ne%z%-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -35,11 +35,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'album.apps.AppConfig',
     'colorfield',
     'smartfields',
     'django.contrib.sites',
     'django_cleanup',
+    'album',
+    'rest_framework',
 )
 SITE_ID = 1
 
@@ -86,9 +87,20 @@ WSGI_APPLICATION = 'myapps.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'memesaccesibles',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
@@ -135,4 +147,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'media'),
 )
 
-
+LOGIN_URL = 'user:auth_login'
+LOGIN_REDIRECT_URL = 'template-list'

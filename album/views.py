@@ -5,6 +5,19 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 import pyttsx3
 import speech_recognition as sr
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+
+# Elementos necesarios para que el API REST funcione 
+from rest_framework import viewsets
+from django.http import Http404
+from rest_framework import status
+from rest_framework.response import Response
+
+# Clase 'TemplatesSerializer' 
+from album.serializers import TemplateSerializer, MemeSerializer
 
 def base(request):
     return render(request, 'base.html')
@@ -50,3 +63,8 @@ class MemeCreate(CreateView):
 class MemeDelete(DeleteView):
     model = Meme
     success_url = reverse_lazy('meme-list')
+
+class TemplateViewSet(viewsets.ModelViewSet):    
+    
+    queryset = Template.objects.all().order_by('id')
+    serializer_class = TemplateSerializer
