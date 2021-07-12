@@ -16,6 +16,8 @@ from django.http import Http404
 from rest_framework import status
 from rest_framework.response import Response
 
+from django.urls import reverse
+
 # Clase 'TemplatesSerializer' 
 from album.serializers import TemplateSerializer, MemeSerializer
 
@@ -33,15 +35,16 @@ class TemplateDetailView(DetailView):
 class TemplateUpdate(UpdateView):
     model = Template
     fields = '__all__'
-
+    success_url = '/'
+    
 class TemplateCreate(CreateView):
     model = Template
     fields = '__all__'
-
+    success_url = '/'
 
 class TemplateDelete(DeleteView):
     model = Template
-    success_url = reverse_lazy('template-list')
+    success_url = '/'
 
 class MemeListView(ListView):
     model = Meme
@@ -62,7 +65,7 @@ class MemeCreate(CreateView):
 
 class MemeDelete(DeleteView):
     model = Meme
-    success_url = reverse_lazy('meme-list')
+    success_url = '/'
 
 class TemplateViewSet(viewsets.ModelViewSet):    
     

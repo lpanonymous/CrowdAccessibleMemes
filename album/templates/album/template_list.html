@@ -2,12 +2,13 @@
 
 {% load static %}
 {% block nav %}
-<li class="nav-item active">
+<!--<li class="nav-item active">
     <a class="nav-link" href="{% url "template-list" %}">Plantillas <span class="sr-only">(current)</span></a>
-  </li>
-  <li class="nav-item">
+  </li> -->
+
+  <!--<li class="nav-item">
     <a class="nav-link" href="{% url "meme-list" %}">Memes</a>
-  </li>
+  </li> -->
   <ul class="navbar-nav">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -15,7 +16,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url "template-create" %}">Subir plantilla</a>
-          <a class="dropdown-item" href="{% url "meme-create" %}">Subir meme</a>
+          <!--<a class="dropdown-item" href="{% url "meme-create" %}">Subir meme</a>-->
         </div>
       </li>
   </ul>
@@ -30,9 +31,9 @@
     <div class="card-columns">
         {% for p in object_list.all %}
         <div class="card">
-            <a href="{% url "template-detail" p.id %}"><img class="card-img-top" src="{% static p.template.url %}" alt="{{p.context}}"></a>
+            <a href="{{p.id}}/detail/"><img class="card-img-top" src="{% static p.template.url %}" alt="{{p.context}}"></a>
             <div class="card-body">
-                <h5 class="card-title"><a href="{% url "template-detail" p.id %}">{{ p.name }}</a></h5>
+                <h5 class="card-title"><a href="{{p.id}}/detail/">{{ p.name }}</a></h5>
             </div>
         </div>
         {% endfor %}

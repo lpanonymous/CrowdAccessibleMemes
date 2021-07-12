@@ -56,3 +56,4 @@ class Meme(models.Model):
         if self.meme:
             return mark_safe('<img src="/static{}" width="300" height="300" />'.format(self.meme.url))
         return ""
+

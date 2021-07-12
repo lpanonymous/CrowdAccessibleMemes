@@ -8,9 +8,10 @@ from album import views
 router = routers.DefaultRouter()
 router.register(r'templates', views.TemplateViewSet)
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('', include('album.urls')),
+    path('', include('album.urls')),
     path('api/', include(router.urls)),
 ]
 
