@@ -26,18 +26,5 @@ class Migration(migrations.Migration):
                 'verbose_name': 'plantilla',
                 'verbose_name_plural': 'plantillas',
             },
-        ),
-        migrations.CreateModel(
-            name='Meme',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('meme', models.ImageField(upload_to=album.models.Meme.image_dir, verbose_name='Meme')),
-                ('pub_date', models.DateField(auto_now_add=True)),
-                ('template', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='album.template', verbose_name='Template')),
-            ],
-            options={
-                'verbose_name': 'meme',
-                'verbose_name_plural': 'memes',
-            },
-        ),
+        )
     ]

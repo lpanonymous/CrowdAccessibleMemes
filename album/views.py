@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from album.models import Template, Meme
+from album.models import Template
 from django.views.generic import ListView, DetailView
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
@@ -19,7 +19,7 @@ from rest_framework.response import Response
 from django.urls import reverse
 
 # Clase 'TemplatesSerializer' 
-from album.serializers import TemplateSerializer, MemeSerializer
+from album.serializers import TemplateSerializer
 
 def base(request):
     return render(request, 'base.html')
@@ -46,26 +46,6 @@ class TemplateDelete(DeleteView):
     model = Template
     success_url = '/'
 
-class MemeListView(ListView):
-    model = Meme
-
-
-class MemeDetailView(DetailView):
-    model = Meme
-
-
-class MemeUpdate(UpdateView):
-    model = Meme
-    fields = '__all__'
-
-class MemeCreate(CreateView):
-    model = Meme
-    fields = '__all__'
-
-
-class MemeDelete(DeleteView):
-    model = Meme
-    success_url = '/'
 
 class TemplateViewSet(viewsets.ModelViewSet):    
     

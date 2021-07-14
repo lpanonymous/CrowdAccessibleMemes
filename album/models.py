@@ -28,32 +28,3 @@ class Template(models.Model):
             return mark_safe('<img src="/static{}" width="300" height="300" />'.format(self.template.url))
         return ""
 
-class Meme(models.Model):
-    """ Fotos del album """
-
-    def image_dir(self, filename):
-        return 'memes/'+osjoin(str(self.template.name), filename)
-
-    template = models.ForeignKey(Template, on_delete=models.CASCADE,null=True, blank=True, verbose_name="Template")
-    meme = models.ImageField(upload_to=image_dir, verbose_name="Meme")
-    pub_date = models.DateField(auto_now_add=True)
-     
-    class Meta:
-        verbose_name = "meme"
-        verbose_name_plural = "memes"
-
-    def __str__(self):
-        return self.template.name  # <=====
-
-    def __unicode__(self):
-        return self.template
-
-    def get_absolute_url(self):
-        return reverse('meme-list')
-
-    @property
-    def meme_preview(self):
-        if self.meme:
-            return mark_safe('<img src="/static{}" width="300" height="300" />'.format(self.meme.url))
-        return ""
-

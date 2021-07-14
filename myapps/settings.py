@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django_cleanup',
     'album',
     'rest_framework',
+    'rest_framework_swagger',
 )
 SITE_ID = 1
 
@@ -149,3 +150,4 @@ STATICFILES_DIRS = (
 
 LOGIN_URL = 'user:auth_login'
 LOGIN_REDIRECT_URL = 'template-list'
+
