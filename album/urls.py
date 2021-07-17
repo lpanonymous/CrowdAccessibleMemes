@@ -10,7 +10,5 @@ urlpatterns = [
                        url(r'^(?P<pk>\d+)/update/$', views.TemplateUpdate.as_view(), name='template-update'),
                        #Create
                        url(r'^create/$', views.TemplateCreate.as_view(), name='template-create'),
-                       #Delete
-                       url(r'^(?P<pk>\d+)/delete/$', views.TemplateDelete.as_view(), name='template-delete'),
                        
 ]

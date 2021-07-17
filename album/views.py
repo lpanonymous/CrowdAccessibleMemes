@@ -42,11 +42,6 @@ class TemplateCreate(CreateView):
     fields = '__all__'
     success_url = '/'
 
-class TemplateDelete(DeleteView):
-    model = Template
-    success_url = '/'
-
-
 class TemplateViewSet(viewsets.ModelViewSet):    
     
     queryset = Template.objects.all().order_by('id')

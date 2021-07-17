@@ -22,7 +22,6 @@
       <h5 class="card-title">{{object.name}}</h5>
       <p class="card-text">{{object.context}}</p>
       <a href="{% url "template-update" object.id %}" class="btn btn-warning">Editar</a>
-      <a href="{% url "template-delete" object.id %}" class="btn btn-danger">Eliminar</a>
     </div>
 </div>
 {% endblock maincontent %}
