@@ -10,11 +10,23 @@ ALLOWED_HOSTS = ['crowdmemes.herokuapp.com']
 
 DATABASES={
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'daqnvnd2g43pck',
+        'USER':'qwynfjgrvwofbb',
+        'PASSWORD':'1b8f9d9ffe76f185c4b1abf3617300143caf5bd1178dcad69739be9d3730cfbb',
+        'HOST':'ec2-50-17-255-120.compute-1.amazonaws.com',
+        'PORT':5432,
         
     }
 }
+
+#DATABASES={
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        
+#    }
+#}
 
 #DATABASES = {
 #    'sqlite': {
