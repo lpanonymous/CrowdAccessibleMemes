@@ -1,12 +1,20 @@
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['crowdmemes.herokuapp.com']
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+
+DATABASES={
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        
+    }
+}
 
 #DATABASES = {
 #    'sqlite': {
@@ -25,10 +33,11 @@ ALLOWED_HOSTS = ['*']
 #        }
 #    }
 #}
-import dj_database_url
-from decouple import config
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+
+#import dj_database_url
+#from decouple import config
+#DATABASES = {
+#    'default': dj_database_url.config(
+#        default=config('DATABASE_URL')
+#    )
+#}
