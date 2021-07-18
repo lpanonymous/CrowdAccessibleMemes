@@ -53,5 +53,3 @@ DATABASES={
 #        default=config('DATABASE_URL')
 #    )
 #}
-
-STATIC_DIRS = (BASE_DIR, 'static')

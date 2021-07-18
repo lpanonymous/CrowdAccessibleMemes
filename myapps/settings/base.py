@@ -130,5 +130,3 @@ STATICFILES_DIRS = (
 
 LOGIN_URL = 'user:auth_login'
 LOGIN_REDIRECT_URL = 'template-list'
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
