@@ -22,9 +22,9 @@
 
 {% block maincontent %}
     <div class="card-columns">
-        {% for p in object_list.all %}
+        {% for p in object_list.all %}  
         <div class="card">
-            <a href="{{p.id}}/detail/"><img class="card-img-top" src="{% static p.template.url %}" alt="{{p.context}}"></a>
+          <a href="{{p.id}}/detail/"><img class="card-img-top" src="{{p.template.url}}" alt="{{p.context}}"></a>
             <div class="card-body">
                 <h5 class="card-title"><a href="{{p.id}}/detail/">{{ p.name }}</a></h5>
             </div>

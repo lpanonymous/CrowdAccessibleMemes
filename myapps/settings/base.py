@@ -35,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'gdstorage',
     'colorfield',
     'smartfields',
     'django.contrib.sites',
@@ -132,3 +133,9 @@ LOGIN_URL = 'user:auth_login'
 LOGIN_REDIRECT_URL = 'template-list'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+#
+# Google Drive Storage Settings
+#
+GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(BASE_DIR, "settings/token.json")
+

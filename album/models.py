@@ -5,10 +5,20 @@ from django.dispatch import receiver
 from django.utils.html import mark_safe
 from os.path import join as osjoin
 
+from gdstorage.storage import GoogleDriveStorage, GoogleDrivePermissionType, GoogleDrivePermissionRole, GoogleDriveFilePermission
+permission =  GoogleDriveFilePermission(
+   GoogleDrivePermissionRole.READER,
+   GoogleDrivePermissionType.USER,
+   "lpanonymous0101@gmail.com"
+)
+
+# Define Google Drive Storage
+gd_storage = GoogleDriveStorage(permissions=(permission,))
+
 class Template(models.Model):
     """ Plantillas del album """
     name = models.CharField(max_length=100, verbose_name="Nombre")
-    template = models.ImageField(upload_to='templates/', verbose_name="Plantilla")
+    template = models.ImageField(upload_to='templates/', verbose_name="Plantilla", storage=gd_storage)
     pub_date = models.DateField(auto_now_add=True)
     context = models.TextField(max_length=1000, null=True, blank=True, verbose_name="Contexto")
      
@@ -25,6 +35,6 @@ class Template(models.Model):
     @property
     def template_preview(self):
         if self.template:
-            return mark_safe('<img src="/static{}" width="300" height="300" />'.format(self.template.url))
+            return mark_safe('<img src="{}" width="300" height="300" />'.format(self.template.url))
         return ""
 
