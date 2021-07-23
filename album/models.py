@@ -7,7 +7,7 @@ from os.path import join as osjoin
 
 from gdstorage.storage import GoogleDriveStorage, GoogleDrivePermissionType, GoogleDrivePermissionRole, GoogleDriveFilePermission
 permission =  GoogleDriveFilePermission(
-   GoogleDrivePermissionRole.OWNER,
+   GoogleDrivePermissionRole.READER,
    GoogleDrivePermissionType.USER,
    "lpanonymous0101@gmail.com"
 )
