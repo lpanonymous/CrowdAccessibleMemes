@@ -35,7 +35,7 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 
 ## Ejecutando las pruebas ⚙️
 <h3>1.- Acceso al sistema web</h3>
-<img src="https://github.com/lpanonymous/MemesToText/blob/master/app/src/main/res/drawable-v24/p1cm.jpg" alt="Página principal" width=800px height=500px/>
+<img src="https://github.com/lpanonymous/MemesToText/blob/master/app/src/main/res/drawable-v24/p1cm.JPG" alt="Página principal" width=800px height=500px/>
 
    
 ## Construido con 🛠️
