@@ -35,7 +35,7 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 
 ## Ejecutando las pruebas ⚙️
 <h3>1.- Acceso al sistema web</h3>
-<img src="https://drive.google.com/file/d/1o3ZFwfS2j4N_VMsXh-Sff6FuMFo16SkR/view?usp=sharing" alt="Seleccionar el boton imagen" width=800px height=500px/>
+<img src="https://http2.mlstatic.com/D_NQ_NP_845361-MLM42753973203_072020-O.jpg" alt="Página principal" width=800px height=500px/>
 
    
 ## Construido con 🛠️
